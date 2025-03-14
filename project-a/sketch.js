@@ -1,42 +1,32 @@
-/*
-Template for IMA's Creative Coding Lab 
-
-Project A: Generative Creatures
-CCLaboratories Biodiversity Atlas 
-*/
-
-let x;
-let y;
-let R = 100;
-let vNumber = 200;
-let smoothness = 0.5;
-
 function setup() {
+    // line below in web editor:
+    // createCanvas(800, 500);
+   
+    // lines below in vs code:
     let canvas = createCanvas(800, 500);
     canvas.id("p5-canvas");
     canvas.parent("p5-canvas-container");
-}
-
-function draw() {
-    background(0);
-    noStroke();
+    
+  }
+  
+  function draw() {
+    background(100, 50, 230);
+    
+    // i made\change
+    
+    
     push();
-    translate(width / 2, height / 2);
-    rotate(sin(frameCount * 0.01));
-    beginShape();
-    for (let i = 0; i < TWO_PI; i += TWO_PI / vNumber) {
-        let offset = noise(
-            smoothness * sin(i),
-            smoothness * cos(i),
-            frameCount * 0.01
-        );
-        offset = map(offset, 0, 1, -R * 0.2, R * 0.2);
-        let radius = R + offset;
-        x = radius * cos(i);
-        y = radius * sin(i);
-        curveVertex(x, y);
+    translate(200, 200-sin(radians(frameCount+0)*10)*5);
+    for(let i = 0; i < 40; i++){
+      let x = i;
+      let y = sin(radians(frameCount+i)*10)*5
+      fill('pink')
+      circle(x, y, 3);
     }
-    endShape(CLOSE);
     pop();
-}
-
+    fill(0)
+    fill('pink')
+    circle(200-20-20, 200-20, 20)
+    ellipse(200-20, 200, 40, 30)
+    
+  }
