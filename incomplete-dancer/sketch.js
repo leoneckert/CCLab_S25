@@ -49,8 +49,15 @@ class LeonDancer {
     // your dancer's desired moves and behaviour
     // this.armAngle+=0.01
     this.armAngle = lerp(this.armAngle, this.armAngleGoal, 0.3);
+
     if(frameCount%40 == 0){
       this.armAngleGoal+=PI;
+    }
+
+
+    // do something once every 40 frames:
+    if(frameCount%40 == 0){
+      // do something
     }
 
     this.xOffset = map(sin(frameCount*0.04), -1, 1, -50, 50)
