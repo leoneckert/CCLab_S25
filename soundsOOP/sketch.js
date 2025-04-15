@@ -24,13 +24,26 @@ function setup() {
 }
 
 function draw() {
-  background(bghue, 180, 30);
+  background(bghue, 180, 27);
+  fill(bghue, 180, 30);
+  noStroke();
+  rect(50, 50, width-100, height-100)
 
   if(interacted == true){
     for(let i = 0; i < instruments.length; i++){
       instruments[i].update();
       instruments[i].display();
     }
+
+    fill(255)
+    textAlign(CENTER);
+    text("click to add instruments", width/2, height-20)
+  
+    
+  }else{
+    fill(255)
+    textAlign(CENTER);
+    text("click the canvas to begin the experience!", width/2, height/2)
   }
   
 }
@@ -81,13 +94,15 @@ class Instrument{
 
 
 function mousePressed(){
-  interacted = true;
+  
   // beep.rate(random(0.1, 5));
   // beep.play()
 
-  // if(mouseX > 50 && mouseX < width-50 && mouseY > 50 && mouseY < height-50){
+  if(interacted == true && mouseX > 50 && mouseX < width-50 && mouseY > 50 && mouseY < height-50){
     let a = new Instrument(mouseX, mouseY);
     instruments.push(a)
-  // }
+  }
+
+  interacted = true;
   
 }
