@@ -107,3 +107,17 @@ function mousePressed(){
   interacted = true;
   
 }
+
+function touchStarted(){
+  
+  // beep.rate(random(0.1, 5));
+  // beep.play()
+
+  if(interacted == true && mouseX > 50 && mouseX < width-50 && mouseY > 50 && mouseY < height-50){
+    let a = new Instrument(mouseX, mouseY);
+    instruments.push(a)
+  }
+
+  interacted = true;
+  
+}
