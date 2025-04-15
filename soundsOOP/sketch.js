@@ -12,14 +12,15 @@ function preload(){
 }
 
 function setup() {
-  let canvas = createCanvas(800, 500);
+  let w = min(800, windowWidth)
+  let canvas = createCanvas(w, 500);
   canvas.parent("p5-canvas-container");
   colorMode(HSB);
 
   bghue = random(255);
 
 
-  let a = new Instrument(200, 200);
+  let a = new Instrument(width/2, height/2);
   instruments.push(a)
 }
 
