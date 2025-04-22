@@ -1,0 +1,26 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  position: absolute; /* needed so the canvas does not scroll */
+  z-index:-1; /* needed so the scroll element can be interacted with */
+}
+
+.main-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+#scrollContainer{
+  /* outline: 1px solid black; */
+  height: 500px; /* should be the same height as canvas */
+  overflow: scroll;
+}
+#scrollBox{
+  height: 4000px; /* scrollheight, should be bigger than canvas */
+  
+}
