@@ -10,7 +10,7 @@ function setup() {
   bgHue = 0
 
   mic = new p5.AudioIn();
-  
+  // mic.start();
 }
 
 function draw() {
@@ -95,6 +95,8 @@ class PinWheel{
 
 
 function mousePressed(){
-  interacted = true;
-  mic.start();
+  if (!interacted) {
+    mic.start(); // Only start the mic after user interaction
+    interacted = true;
+  }
 }
