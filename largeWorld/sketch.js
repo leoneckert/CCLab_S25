@@ -68,6 +68,9 @@ function draw() {
     }
   }
 
+  textSize(15);
+  text("A, W, S, D to swim the paper ocean!", 20, height-20)
+
 }
 
 
@@ -76,7 +79,7 @@ class Particle{
     this.x = random(0, worldWidth);
     this.y = random(0, worldHeight);
     this.speedX = random(-2, 2);
-    this.dia = 20
+    this.dia = random(20, 50)
   }
   update(){
     this.x += this.speedX;
@@ -91,6 +94,8 @@ class Particle{
     push();
     translate(this.x, this.y);
 
+    noStroke();
+    fill(20, 50, 200, 100)
     circle(0, 0, this.dia);
 
     pop();
