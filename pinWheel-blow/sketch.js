@@ -103,3 +103,13 @@ function mousePressed(){
     interacted = true;
   }
 }
+
+function keyPressed(){
+  navigator.mediaDevices.getUserMedia({ audio: true })
+  .then(stream => {
+    console.log("Mic access granted!");
+  })
+  .catch(err => {
+    console.error("Mic error", err);
+  });
+}
