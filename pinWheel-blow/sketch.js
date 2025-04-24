@@ -99,10 +99,23 @@ function mousePressed(){
     console.log("Devices:", devices);
   });
   if (!interacted) {
-    mic.start(); // Only start the mic after user interaction
-    interacted = true;
+    getAudioContext().resume().then(() => {
+      mic.start();
+      interacted = true;
+      console.log("Audio context resumed and mic started.");
+    });
   }
 }
+
+// function mousePressed(){
+//   if (!interacted) {
+//     getAudioContext().resume().then(() => {
+//       mic.start();
+//       interacted = true;
+//       console.log("Audio context resumed and mic started.");
+//     });
+//   }
+// }
 
 function keyPressed(){
   navigator.mediaDevices.getUserMedia({ audio: true })
