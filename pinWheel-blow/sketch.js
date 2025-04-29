@@ -95,9 +95,10 @@ class PinWheel{
 
 
 function mousePressed(){
-  navigator.mediaDevices.enumerateDevices().then(devices => {
-    console.log("Devices:", devices);
-  });
+  // navigator.mediaDevices.enumerateDevices().then(devices => {
+  //   console.log("Devices:", devices);
+  // });
+
   if (!interacted) {
     getAudioContext().resume().then(() => {
       mic.start();
